@@ -198,25 +198,6 @@ holds true that you should apply all of the above *before* pushing it.
   That said, *never rewrite the history of the "master" branch* or any other
   special branches (ie. used by production or CI servers).
 
-* Keep the history *clean* and *simple*. *Just before you merge* your branch:
-
-    1. Make sure it conforms to the style guide and perform any needed actions
-       if it doesn't (squash/reorder commits, reword messages etc.)
-
-    2. Rebase it onto the branch it's going to be merged to:
-
-       ```shell
-       [my-branch] $ git fetch
-       [my-branch] $ git rebase origin/master
-       # then merge
-       ```
-
-       This results in a branch that can be applied directly to the end of the
-       "master" branch and results in a very simple history.
-
-       *(Note: This strategy is better suited for projects with short-running
-       branches. Otherwise it might be better to occassionally merge the
-       "master" branch instead of rebasing onto it.)*
 
 * If your branch includes more than one commit, do not merge with a
   fast-forward:
